@@ -1,32 +1,32 @@
 @using SocOps.Models
 
-<div class="flex flex-col min-h-full bg-gray-50">
+<div class="flex flex-col min-h-full bg-gradient-retro">
     <!-- Header -->
-    <header class="flex items-center justify-between p-3 bg-white border-b border-gray-200">
+    <header class="flex items-center justify-between p-4 bg-gradient-card border-b border-hot-pink/50 shadow-lg">
         <button
             @onclick="OnReset"
-            class="text-gray-500 text-sm px-3 py-1.5 rounded active:bg-gray-100">
-            ← Back
+            class="text-cyan hover:text-yellow text-sm px-3 py-1.5 rounded font-semibold transition-colors duration-200 uppercase tracking-wider hover:box-glow-cyan">
+            ? Back
         </button>
-        <h1 class="font-bold text-gray-900">Soc Ops</h1>
+        <h1 class="font-display text-3xl text-hot-pink glow-pink" style="letter-spacing: -1px;">SOC OPS</h1>
         <div class="w-16"></div>
     </header>
 
     <!-- Instructions -->
-    <p class="text-center text-gray-500 text-sm py-2 px-4">
+    <p class="text-center text-cyan text-sm py-3 px-4 font-semibold uppercase tracking-widest">
         Tap a square when you find someone who matches it.
     </p>
 
     <!-- Bingo indicator -->
     @if (HasBingo)
     {
-        <div class="bg-amber-100 text-amber-800 text-center py-2 font-semibold text-sm">
-            🎉 BINGO! You got a line!
+        <div class="bg-yellow/20 border-2 border-yellow text-yellow text-center py-3 font-bold text-sm uppercase tracking-wider animate-pulse">
+            ?? BINGO! YOU GOT A LINE!
         </div>
     }
 
     <!-- Board -->
-    <div class="flex-1 flex items-center justify-center p-3">
+    <div class="flex-1 flex items-center justify-center p-4">
         <BingoBoard
             Board="@Board"
             WinningSquareIds="@WinningSquareIds"
